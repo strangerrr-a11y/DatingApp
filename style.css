@@ -1,0 +1,115 @@
+*{box-sizing:border-box}
+
+body{
+  margin:0; min-height:100vh; overflow-x:hidden; overflow-y:auto;
+  display:flex; align-items:center; justify-content:center;
+  font-family:Georgia,"Times New Roman",serif;
+  background:
+    radial-gradient(circle at 15% 15%,#f8d7e3 0 10%,transparent 30%),
+    radial-gradient(circle at 85% 80%,#eadcff 0 8%,transparent 28%),
+    linear-gradient(135deg,#fffaf6,#f8edf3 52%,#fff5ea);
+  color:#3b2029;
+}
+
+#mobileBlock{
+  display:none; position:fixed; inset:0; z-index:9999;
+  background:linear-gradient(135deg,#fff7fa,#ffe2ec);
+  align-items:center; justify-content:center;
+  text-align:center; padding:30px;
+}
+.blockCard{
+  max-width:430px; background:white; padding:42px 28px;
+  border-radius:28px; box-shadow:0 25px 70px rgba(80,30,50,.18);
+  border:1px solid #efd2dc;
+}
+.blockIcon{font-size:58px}
+.blockCard h2{font-size:32px;color:#c93f68;margin:15px 0}
+.blockCard p{font-size:17px;line-height:1.7;color:#765260;margin:0}
+
+.petals span{
+  position:fixed; top:-40px; font-size:22px; opacity:.65;
+  animation:fall linear infinite; pointer-events:none;
+}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+
+.card{
+  position:relative; width:min(760px,88vw); min-height:500px;
+  margin:40px 0; padding:58px 70px; text-align:center;
+  background:linear-gradient(145deg,#fffdf9,#fff4f7);
+  border:1px solid #efd2dc; border-radius:30px;
+  box-shadow:0 30px 80px rgba(85,35,52,.22);
+}
+.card:before,.card:after{
+  content:""; position:absolute; width:70px;height:70px;
+  border-color:#d99bad;border-style:solid;
+}
+.card:before{top:20px;left:20px;border-width:2px 0 0 2px;border-radius:15px 0 0 0}
+.card:after{bottom:20px;right:20px;border-width:0 2px 2px 0;border-radius:0 0 15px 0}
+
+.badge{
+  display:inline-block;padding:7px 14px;border:1px solid #e5bcc9;
+  border-radius:999px;color:#9d5a70;font-size:11px;
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;
+}
+.small{color:#a45b70;letter-spacing:4px;text-transform:uppercase;font-size:12px;margin-bottom:25px}
+.heart{font-size:54px;animation:pulse 1.7s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.1)}}
+
+h1{font-size:clamp(40px,6vw,68px);line-height:1.05;margin:18px 0 20px;color:#4b2632}
+h1 em{color:#d94e78;font-style:italic}
+.letter{max-width:590px;margin:0 auto;font-size:19px;line-height:1.8;color:#694c57}
+.signature{margin-top:25px;font-size:18px;color:#9b5a6f}
+
+.buttons{position:relative;width:100%;height:95px;margin-top:25px}
+button{
+  border:0;border-radius:999px;padding:16px 34px;
+  font:600 17px Georgia,serif;cursor:pointer;
+  transition:transform .2s,box-shadow .2s;
+}
+#yes{background:#d94e78;color:white;box-shadow:0 12px 28px rgba(217,78,120,.3)}
+#yes:hover{transform:translateY(-3px) scale(1.04)}
+#no{
+  position:absolute;left:calc(50% + 55px);top:8px;
+  background:white;color:#a64d68;border:1px solid #efc3d0;
+  box-shadow:0 8px 20px rgba(70,30,45,.1);
+}
+.note{font-size:12px;color:#a77a88;margin-top:10px}
+
+#success{
+  display:none;position:absolute;inset:0;border-radius:30px;
+  background:linear-gradient(145deg,#fff8fb,#ffe5ee);
+  align-items:center;justify-content:center;flex-direction:column;
+  padding:40px;z-index:5;overflow:auto;
+}
+#success .big{font-size:70px}
+#success h2{font-size:48px;margin:12px 0;color:#c93f68}
+#success p{font-size:19px;line-height:1.7;max-width:540px;margin:0 auto 12px}
+.nextBtn{
+  border:0;border-radius:999px;padding:15px 28px;margin-top:15px;
+  background:#d94e78;color:white;font:600 16px Georgia,serif;
+  cursor:pointer;box-shadow:0 10px 25px rgba(217,78,120,.25);
+}
+.field{text-align:left;margin:12px 0}
+.field label{display:block;font-size:14px;color:#8b5264;margin-bottom:6px}
+.field input{
+  width:100%;padding:13px 15px;border-radius:12px;
+  border:1px solid #e5bdcb;background:white;color:#4b2632;
+  font:16px Georgia,serif;
+}
+#planPreview{
+  margin:15px 0;padding:14px;border-radius:14px;
+  background:#fff;border:1px solid #efd0da;color:#755260;
+  line-height:1.6;
+}
+#confirmed{
+  display:none;margin-top:18px;font-size:18px;color:#c93f68;font-weight:bold;
+}
+
+@media(max-width:700px),(pointer:coarse){
+  #mobileBlock{display:flex}
+  body>*:not(#mobileBlock){display:none!important}
+}
+
+@media(min-width:701px) and (pointer:fine){
+  body{overflow-x:hidden;overflow-y:auto}
+}
