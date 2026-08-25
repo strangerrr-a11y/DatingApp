@@ -1,102 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A Little Question for Shital ❤️</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <div id="mobileBlock">
-    <div class="blockCard">
-      <div class="blockIcon">💻❤️</div>
-      <h2>Open this on a laptop</h2>
-      <p>This little surprise is specially made for a laptop/desktop screen. 😊<br><br>Please open it on a laptop to continue.</p>
-    </div>
-  </div>
-
-  <div class="petals">
-    <span style="left:7%;animation-duration:9s">🌸</span>
-    <span style="left:22%;animation-duration:12s;animation-delay:2s">♡</span>
-    <span style="left:42%;animation-duration:10s;animation-delay:4s">🌷</span>
-    <span style="left:65%;animation-duration:13s;animation-delay:1s">♡</span>
-    <span style="left:84%;animation-duration:9s;animation-delay:3s">🌸</span>
-  </div>
-
-  <main class="card">
-    <div class="badge">Private Invitation • 001</div>
-    <div class="heart">💌</div>
-    <div class="small">Officially Unofficial Date Proposal • VIP Edition</div>
-
-    <h1>Dear Shital,<br><em>I have a very serious question…</em></h1>
-
-    <div class="letter">
-      I've thought about this for a completely reasonable amount of time
-      (okay… maybe an unreasonable amount 😭) and I've reached one important
-      conclusion:
-      <br><br>
-      <strong>I would really, really like to take you on a date. ❤️</strong>
-      <br><br>
-      The plan is simple: good food, random conversations, unnecessary laughing,
-      a few cute moments, and hopefully a memory we'll both be happy we made.
-      <br><br>
-      There is absolutely <strong>no pressure</strong>. You choose the day,
-      time and place. I only have one tiny request…
-      <br><br>
-      <strong>Please say yes. 🥹👉👈</strong>
-      <br><br>
-      Because I have already spent so much effort making this website,
-      and my ego would appreciate it. 😂❤️
-    </div>
-
-    <div class="signature">— A guy making a very brave application for the position of “Your Date” ❤️</div>
-
-    <div class="buttons" id="buttons">
-      <button id="yes" onclick="acceptDate()">Yes, let's do it! ❤️</button>
-      <button id="no">No 🙈</button>
-    </div>
-
-    <div class="note">
-      P.S. Please consider my extremely professional application. 😂<br>
-      You choose the date, time & place. 🌷
-    </div>
-
-    <div id="success">
-      <div id="yesScreen">
-        <div class="big">🥰💐</div>
-        <h2>YOU SAID YES! 😭❤️</h2>
-        <p>Shital, you've just made one guy unnecessarily happy. 😂<br>
-        Now comes the important part: you get to choose our date, time and place.</p>
-        <button class="nextBtn" onclick="showPlan()">Choose our date →</button>
-      </div>
-
-      <div id="planScreen" style="display:none;width:100%;max-width:560px;">
-        <div class="big">🌷</div>
-        <h2>The VIP Date Planner ✨</h2>
-        <p>Madam gets full authority. 👑<br>
-        Pick a day, time and place that feels perfect for you. ❤️</p>
-
-        <div class="field">
-          <label>📅 Date</label>
-          <input id="date" type="date">
-        </div>
-        <div class="field">
-          <label>🕐 Time</label>
-          <input id="time" type="time">
-        </div>
-        <div class="field">
-          <label>📍 Place</label>
-          <input id="place" type="text" placeholder="Cafe, restaurant, park...">
-        </div>
-
-        <div id="planPreview">Choose your date, time and place ✨</div>
-        <button class="nextBtn" onclick="confirmDate()">Confirm our very important date ❤️</button>
-        <div id="confirmed"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Little Question for Shital ❤️</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="mobileBlock">
+      <div class="blockCard">
+        <div class="blockIcon">💻❤️</div>
+        <h2>Plz🙏 Open this on a laptop/pc</h2>
+        <p>
+          This little surprise is specially made for a laptop/pc screen. 😊<br /><br />Please
+          open it on a laptop to continue.
+        </p>
       </div>
     </div>
-  </main>
 
-  <script src="script.js"></script>
-</body>
+    <div class="petals">
+      <span style="left: 7%; animation-duration: 9s">🌸</span>
+      <span style="left: 22%; animation-duration: 12s; animation-delay: 2s"
+        >♡</span
+      >
+      <span style="left: 42%; animation-duration: 10s; animation-delay: 4s"
+        >🌷</span
+      >
+      <span style="left: 65%; animation-duration: 13s; animation-delay: 1s"
+        >♡</span
+      >
+      <span style="left: 84%; animation-duration: 9s; animation-delay: 3s"
+        >🌸</span
+      >
+    </div>
+
+    <main class="card">
+      <div class="badge">Private Invitation • 001</div>
+      <div class="heart">💌</div>
+      <div class="small">Officially Unofficial Date Proposal</div>
+
+      <h1>Dear Shital G,<br /><em>I have a very serious question…</em></h1>
+
+      <div class="letter">
+        I've thought about this for a completely reasonable amount of time
+        (okay… maybe an unreasonable amount 😭) and I've reached one important
+        conclusion:
+        <br /><br />
+        <strong>I would really, really like to take you on a date. ❤️</strong>
+        <br /><br />
+        The plan is simple: good food, random conversations, unnecessary
+        laughing, a few cute moments, and hopefully a memory we'll both be happy
+        we made.
+        <br /><br />
+        There is absolutely <strong>no pressure</strong>. You choose the day,
+        time and place. I only have one tiny request… <br /><br />
+        <strong>Please say yes. 🥹👉👈</strong>
+        <br /><br />
+        Becoz I have already spent so much effort making this website, and my
+        ego would appreciate it. so.. 😂❤️
+      </div>
+
+      <div class="signature">
+        — A guy making a very brave application for the position of “Your Date”
+        so....❤️
+      </div>
+
+      <div class="buttons" id="buttons">
+        <button id="yes" onclick="acceptDate()">Yes, let's do it! ❤️</button>
+        <button id="no">No 🙈</button>
+      </div>
+
+      <div class="note">
+        P.S. Please consider my extremely professional application. 😂<br />
+        You choose the date, time & place. 🌷
+      </div>
+
+      <div id="success">
+        <div id="yesScreen">
+          <div class="big">🥰💐</div>
+          <h2>Ohh YES Yeee! ✌️❤️</h2>
+          <p>
+            Pritty🎀, you've just made one guy unnecessarily happy. 😂<br />
+            Now comes the important part: you get to choose our date, time and
+            place.
+          </p>
+          <button class="nextBtn" onclick="showPlan()">
+            Choose our date →
+          </button>
+        </div>
+
+        <div
+            id="thankYouScreen"
+            style="display: none; width: 100%; max-width: 560px"
+          >
+            <div class="big">🤍✨</div>
+            <h2>Thank You So Much, Pritty🤍</h2> 
+          </div>
+
+        <div
+          id="planScreen"
+          style="display: none; width: 100%; max-width: 560px"
+        >
+          <div class="big">🌷</div>
+          <h2>Date Plannig ✨</h2>
+          <p>
+            Madam gets full authority. 👑<br />
+            Pick a day, time and place that feels perfect for you. ❤️
+          </p>
+
+          <div class="field">
+            <label>📅 Date</label>
+            <input id="date" type="date" />
+          </div>
+          <div class="field">
+            <label>🕐 Time</label>
+            <input id="time" type="time" placeholder="timing" />
+          </div>
+          <div class="field">
+            <label>📍 Place</label>
+            <input
+              id="place"
+              type="text"
+              placeholder="Cafe, restaurant, park..."
+            />
+          </div>
+
+          <div class="field">
+            <label>🍔 What should we eat?</label>
+            <select id="food">
+              <option value="">Choose something delicious...</option>
+              <option>🍔 Fast Food — Burger & Fries</option>
+              <option>🍕 Pizza</option>
+              <option>🌮 Momos & Snacks</option>
+              <option>🥪 Sandwich / Cafe Food</option>
+              <option>🍦 Ice Cream / Dessert</option>
+              <option>🧋 Cafe & Cold Coffee</option>
+              <option>🍰 Cake & Dessert</option>
+              <option>🍽️ Anything you want 😌</option>
+            </select>
+          </div>
+
+          <div id="planPreview">Choose your date, time, place and food ✨</div>
+          <button class="nextBtn" onclick="confirmDate()">
+            Confirm date ❤️
+          </button>
+          <div id="confirmed"></div>
+
+          <form
+            id="emailForm"
+            action="https://formsubmit.co/mratul0266@gmail.com"
+            method="POST"
+            target="emailFrame"
+            style="display: none"
+          >
+            <input
+              type="hidden"
+              name="_subject"
+              value="💕 Shital confirmed the date"
+            />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="Date" id="mailDate" />
+            <input type="hidden" name="Time" id="mailTime" />
+            <input type="hidden" name="Place" id="mailPlace" />
+            <input type="hidden" name="Food" id="mailFood" />
+            <input
+              type="hidden"
+              name="message"
+              value="Shital said: Let's meet for a wonderful date ❤️!"
+            />
+          </form>
+          <iframe name="emailFrame" style="display: none"></iframe>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
 </html>
