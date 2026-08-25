@@ -9,7 +9,7 @@ function moveNo() {
 
   noBtn.style.left = Math.random() * maxX + "px";
   noBtn.style.top = Math.random() * maxY + "px";
-  noBtn.style.transform = `rotate(${Math.random() * 18 - 9}deg)`;
+  noBtn.style.transform = `rotate(${Math.random() * 20 - 10}deg) scale(1.05)`;
 }
 
 noBtn.addEventListener("mouseenter", moveNo);
@@ -154,7 +154,7 @@ function confirmDate() {
         top: 0,
         behavior: "smooth",
       });
-    }, 3500);
-  }, 900);
+    }, 5000);
+  }, 1500);
 }
 
