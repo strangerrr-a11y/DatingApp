@@ -245,6 +245,9 @@ button {
   color: #875568;
   border: 1px solid #e5cbd3;
   box-shadow: 0 9px 24px rgba(60, 35, 44, 0.08);
+  transition: none !important;
+  user-select: none;
+  will-change: left, top, transform;
 }
 
 .note {
