@@ -6,32 +6,71 @@
     <title>A Little Question for Shital ❤️</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
+
+    <!-- =========================
+         FRONT PAGE
+         ========================= -->
+
+    <div id="introPage">
+
+      <div class="introParticles" id="introParticles"></div>
+
+      <div class="introGlow"></div>
+
+      <div class="introSweep"></div>
+
+      <div class="introContent">
+
+        <div class="introHeart">♡</div>
+
+        <div class="introSmall">
+          Hii... just a little thing ♡
+        </div>
+
+        <h1>
+          I hope it's <span>okay</span>...
+        </h1>
+
+        <p class="introMessage">
+          I made something small for you.<br />
+          Please click below... I hope you like it. ✨
+        </p>
+
+        <button class="introButton" onclick="openDatingPage()">
+          Please click here ♡
+        </button>
+
+        <div class="introHint">
+          Don't worry... it's nothing scary ☺
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- =========================
+         YOUR EXISTING APP
+         ========================= -->
+
     <div id="mobileBlock">
       <div class="blockCard">
         <div class="blockIcon">💻❤️</div>
         <h2>Plz🙏 Open this on a laptop/pc</h2>
         <p>
-          This little surprise is specially made for you. 😊<br /><br />plz
-          open the leptop/pc😞.
+          This little surprise is specially made for a laptop/pc screen. 😊<br /><br />
+          Please open it on a laptop to continue.
         </p>
       </div>
     </div>
 
     <div class="petals">
       <span style="left: 7%; animation-duration: 9s">🌸</span>
-      <span style="left: 22%; animation-duration: 12s; animation-delay: 2s"
-        >♡</span
-      >
-      <span style="left: 42%; animation-duration: 10s; animation-delay: 4s"
-        >🌷</span
-      >
-      <span style="left: 65%; animation-duration: 13s; animation-delay: 1s"
-        >♡</span
-      >
-      <span style="left: 84%; animation-duration: 9s; animation-delay: 3s"
-        >🌸</span
-      >
+      <span style="left: 22%; animation-duration: 12s; animation-delay: 2s">♡</span>
+      <span style="left: 42%; animation-duration: 10s; animation-delay: 4s">🌷</span>
+      <span style="left: 65%; animation-duration: 13s; animation-delay: 1s">♡</span>
+      <span style="left: 84%; animation-duration: 9s; animation-delay: 3s">🌸</span>
     </div>
 
     <main class="card">
@@ -39,24 +78,37 @@
       <div class="heart">💌</div>
       <div class="small">Officially Unofficial Date Proposal</div>
 
-      <h1>Dear Shital G,<br /><em>I have a very serious question…</em></h1>
+      <h1>
+        Dear Shital G,<br />
+        <em>I have a very serious question…</em>
+      </h1>
 
       <div class="letter">
         I've thought about this for a completely reasonable amount of time
         (okay… maybe an unreasonable amount 😭) and I've reached one important
         conclusion:
         <br /><br />
+
         <strong>I would really, really like to take you on a date. ❤️</strong>
+
         <br /><br />
+
         The plan is simple: good food, random conversations, unnecessary
         laughing, a few cute moments, and hopefully a memory we'll both be happy
         we made.
+
         <br /><br />
+
         There is absolutely <strong>no pressure</strong>. You choose the day,
-        time and place. I only have one tiny request… <br /><br />
-        <strong>Please say yes. 🥹👉👈</strong>
+        time and place. I only have one tiny request…
+
         <br /><br />
-        Becoz I have already spent so much effort making this website, and my
+
+        <strong>Please say yes. 🥹👉👈</strong>
+
+        <br /><br />
+
+        Bcoz I have already spent so much effort making this website, and my
         ego would appreciate it. so.. 😂❤️
       </div>
 
@@ -76,35 +128,41 @@
       </div>
 
       <div id="success">
+
         <div id="yesScreen">
           <div class="big">🥰💐</div>
+
           <h2>Ohh YES Yeee! ✌️❤️</h2>
+
           <p>
             Pritty🎀, you've just made one guy unnecessarily happy. 😂<br />
             Now comes the important part: you get to choose our date, time and
             place.
           </p>
+
           <button class="nextBtn" onclick="showPlan()">
             Choose our date →
           </button>
         </div>
 
         <div
-            id="thankYouScreen"
-            style="display: none; width: 100%; max-width: 560px"
-          >
-            <div class="big">🤍✨</div>
-            <h2>Ooo Let's Go🍃, Pritty🤍</h2> 
-          </div>
+          id="thankYouScreen"
+          style="display: none; width: 100%; max-width: 560px"
+        >
+          <div class="big">🤍✨</div>
+          <h2>Ohh Let's Go, Pritty🤍</h2>
+        </div>
 
         <div
           id="planScreen"
           style="display: none; width: 100%; max-width: 560px"
         >
           <div class="big">🌷</div>
+
           <h2>Date Plannig ✨</h2>
+
           <p>
-            Madam gets full authority. 👑<br />
+            misses gets full authority. 👑<br />
             Pick a day, time and place that feels perfect for you. ❤️
           </p>
 
@@ -112,12 +170,15 @@
             <label>📅 Date</label>
             <input id="date" type="date" />
           </div>
+
           <div class="field">
             <label>🕐 Time</label>
             <input id="time" type="time" placeholder="timing" />
           </div>
+
           <div class="field">
             <label>📍 Place</label>
+
             <input
               id="place"
               type="text"
@@ -127,23 +188,56 @@
 
           <div class="field">
             <label>🍔 What should we eat?</label>
+
             <select id="food">
-              <option value="">Choose something delicious...</option>
-              <option>🍔 Fast Food — Burger & Fries</option>
-              <option>🍕 Pizza</option>
-              <option>🌮 Momos & Snacks</option>
-              <option>🥪 Sandwich / Cafe Food</option>
-              <option>🍦 Ice Cream / Dessert</option>
-              <option>🧋 Cafe & Cold Coffee</option>
-              <option>🍰 Cake & Dessert</option>
-              <option>🍽️ Anything you want 😌</option>
+
+              <option value="">
+                Choose something delicious...
+              </option>
+
+              <option>
+                🍔 Fast Food — Burger & Fries
+              </option>
+
+              <option>
+                🍕 Pizza
+              </option>
+
+              <option>
+                🌮 Momos & Snacks
+              </option>
+
+              <option>
+                🥪 Sandwich / Cafe Food
+              </option>
+
+              <option>
+                🍦 Ice Cream / Dessert
+              </option>
+
+              <option>
+                🧋 Cafe & Cold Coffee
+              </option>
+
+              <option>
+                🍰 Cake & Dessert
+              </option>
+
+              <option>
+                🍽️ Anything you want 😌
+              </option>
+
             </select>
           </div>
 
-          <div id="planPreview">Choose your date, time, place and food ✨</div>
+          <div id="planPreview">
+            Choose your date, time, place and food ✨
+          </div>
+
           <button class="nextBtn" onclick="confirmDate()">
             Confirm date ❤️
           </button>
+
           <div id="confirmed"></div>
 
           <form
@@ -153,28 +247,151 @@
             target="emailFrame"
             style="display: none"
           >
+
             <input
               type="hidden"
               name="_subject"
               value="💕 Shital confirmed the date"
             />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="Date" id="mailDate" />
-            <input type="hidden" name="Time" id="mailTime" />
-            <input type="hidden" name="Place" id="mailPlace" />
-            <input type="hidden" name="Food" id="mailFood" />
+
+            <input
+              type="hidden"
+              name="_captcha"
+              value="false"
+            />
+
+            <input
+              type="hidden"
+              name="_template"
+              value="table"
+            />
+
+            <input
+              type="hidden"
+              name="Date"
+              id="mailDate"
+            />
+
+            <input
+              type="hidden"
+              name="Time"
+              id="mailTime"
+            />
+
+            <input
+              type="hidden"
+              name="Place"
+              id="mailPlace"
+            />
+
+            <input
+              type="hidden"
+              name="Food"
+              id="mailFood"
+            />
+
             <input
               type="hidden"
               name="message"
               value="Shital said: Let's meet for a wonderful date ❤️!"
             />
+
           </form>
-          <iframe name="emailFrame" style="display: none"></iframe>
+
+          <iframe
+            name="emailFrame"
+            style="display: none"
+          ></iframe>
+
         </div>
       </div>
     </main>
+    <!-- Custom Alert Modal -->
+    <div id="customAlert" class="custom-alert-overlay">
+      <div class="custom-alert-modal">
+        <div class="alert-content">
+          <div class="alert-icon">✨</div>
+          <h3 id="alertTitle">Are You Sure?</h3>
+          <p id="alertMessage">Are you really ready for this? 💕</p>
+          <div class="alert-buttons">
+            <button class="alert-btn alert-yes" id="alertYes">Yes, I'm Sure! ❤️</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+
+      /* =========================
+         FRONT PAGE PARTICLES
+         ========================= */
+
+      const introParticles =
+        document.getElementById("introParticles");
+
+      const introSymbols = [
+        "♡",
+        "♥",
+        "✦",
+        "✧",
+        "·"
+      ];
+
+      for (let i = 0; i < 35; i++) {
+
+        const p =
+          document.createElement("span");
+
+        p.className = "introParticle";
+
+        p.innerHTML =
+          introSymbols[
+            Math.floor(
+              Math.random() * introSymbols.length
+            )
+          ];
+
+        p.style.left =
+          Math.random() * 100 + "%";
+
+        p.style.fontSize =
+          (8 + Math.random() * 15) + "px";
+
+        p.style.animationDuration =
+          (7 + Math.random() * 10) + "s";
+
+        p.style.animationDelay =
+          (-Math.random() * 15) + "s";
+
+        introParticles.appendChild(p);
+      }
+
+
+      /* =========================
+         OPEN EXISTING DATING PAGE
+         ========================= */
+
+      function openDatingPage() {
+
+        const intro =
+          document.getElementById("introPage");
+
+        intro.classList.add("open");
+
+        /*
+          Left + right panels open first.
+          Then the existing dating page becomes visible.
+        */
+
+        setTimeout(() => {
+
+          intro.style.display = "none";
+
+        }, 1350);
+      }
+
+    </script>
 
     <script src="script.js"></script>
+
   </body>
 </html>
