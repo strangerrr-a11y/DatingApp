@@ -536,12 +536,21 @@ button {
         border-radius: 50%;
         background: rgba(193,82,119,.12);
         filter: blur(80px);
-        animation: introPulse 3s ease-in-out infinite;
+        animation: introPulse 3s ease-in-out infinite, glowShift 8s ease-in-out infinite;
       }
 
       @keyframes introPulse {
         0%,100% { transform: scale(.9); opacity: .55; }
         50% { transform: scale(1.15); opacity: 1; }
+      }
+
+      @keyframes glowShift {
+        0%, 100% {
+          background: rgba(193,82,119,.12);
+        }
+        50% {
+          background: rgba(185, 79, 112, 0.2);
+        }
       }
 
       .introSweep {
@@ -558,12 +567,23 @@ button {
         );
         filter: blur(2px);
         opacity: .5;
-        animation: introSweep 3s ease-in-out infinite;
+        animation: introSweep 3s ease-in-out infinite, sweepGlow 4s ease-in-out infinite;
       }
 
       @keyframes introSweep {
         0%,100% { opacity: 0; transform: scaleY(.3); }
         50% { opacity: .7; transform: scaleY(1); }
+      }
+
+      @keyframes sweepGlow {
+        0%, 100% {
+          filter: blur(2px);
+          box-shadow: none;
+        }
+        50% {
+          filter: blur(4px);
+          box-shadow: 0 0 30px rgba(185, 79, 112, 0.3);
+        }
       }
 
       .introContent {
@@ -574,6 +594,18 @@ button {
         text-align: center;
         color: #263044;
         transition: 1s ease;
+        animation: contentFadeIn 1s ease-out;
+      }
+
+      @keyframes contentFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       .introHeart {
@@ -588,12 +620,21 @@ button {
         color: #b85d7b;
         font-size: 28px;
         box-shadow: 0 0 35px rgba(181,81,113,.14);
-        animation: introHeartBeat 1.8s ease-in-out infinite;
+        animation: introHeartBeat 1.8s ease-in-out infinite, heartGlow 2.5s ease-in-out infinite;
       }
 
       @keyframes introHeartBeat {
         0%,100% { transform: scale(1); }
-        50% { transform: scale(1.1); }
+        50% { transform: scale(1.15); }
+      }
+
+      @keyframes heartGlow {
+        0%, 100% {
+          box-shadow: 0 0 35px rgba(181, 81, 113, 0.14);
+        }
+        50% {
+          box-shadow: 0 0 60px rgba(185, 79, 112, 0.35), 0 0 100px rgba(185, 79, 112, 0.15);
+        }
       }
 
       .introSmall {
@@ -602,6 +643,18 @@ button {
         font-style: italic;
         font-size: 30px;
         margin-bottom: 10px;
+        animation: slideInDown 0.8s ease-out 0.2s both;
+      }
+
+      @keyframes slideInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       .introContent h1 {
@@ -611,10 +664,35 @@ button {
         letter-spacing: -1.5px;
         line-height: 1.15;
         margin: 0;
+        animation: slideInUp 0.8s ease-out 0.4s both;
+      }
+
+      @keyframes slideInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       .introContent h1 span {
         color: #b85d7b;
+        display: inline-block;
+        animation: colorPulse 2s ease-in-out infinite;
+      }
+
+      @keyframes colorPulse {
+        0%, 100% {
+          color: #b85d7b;
+          text-shadow: 0 0 0 rgba(185, 79, 112, 0);
+        }
+        50% {
+          color: #d17a99;
+          text-shadow: 0 0 15px rgba(185, 79, 112, 0.4);
+        }
       }
 
       .introMessage {
@@ -623,6 +701,18 @@ button {
         color: #77717a;
         font-size: 15px;
         line-height: 1.8;
+        animation: fadeInScale 0.8s ease-out 0.6s both;
+      }
+
+      @keyframes fadeInScale {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
       }
 
       .introButton {
@@ -638,6 +728,18 @@ button {
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
+        animation: buttonBounceIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s both;
+      }
+
+      @keyframes buttonBounceIn {
+        from {
+          opacity: 0;
+          transform: scale(0.3) translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
       }
 
       .introButton::before {
@@ -680,7 +782,7 @@ button {
         position: absolute;
         color: #c46a86;
         opacity: 0;
-        animation: introFloat linear infinite;
+        animation: introFloat linear infinite, particleGlow 3s ease-in-out infinite;
       }
 
       @keyframes introFloat {
@@ -688,12 +790,37 @@ button {
           transform: translateY(110vh) rotate(0deg);
           opacity: 0;
         }
-        15% { opacity: .6; }
-        80% { opacity: .4; }
+        10% { 
+          opacity: 0.8;
+        }
+        15% { 
+          opacity: 0.6;
+        }
+        80% { 
+          opacity: 0.4;
+        }
         100% {
           transform: translateY(-15vh) rotate(360deg);
           opacity: 0;
         }
+      }
+
+      @keyframes particleGlow {
+        0%, 100% {
+          filter: drop-shadow(0 0 0px rgba(196, 106, 134, 0.5));
+          text-shadow: none;
+        }
+        50% {
+          filter: drop-shadow(0 0 8px rgba(196, 106, 134, 0.8));
+          text-shadow: 0 0 8px rgba(185, 79, 112, 0.6);
+        }
+      }
+
+      .introHint {
+        margin-top: 16px;
+        font-size: 11px;
+        color: #91878b;
+        animation: fadeInScale 0.8s ease-out 1s both;
       }
 
       @media (max-width: 600px) {
