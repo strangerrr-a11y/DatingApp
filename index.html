@@ -109,7 +109,7 @@
         <br /><br />
 
         Bcoz I have already spent so much effort making this website, and my
-        ego would appreciate it. so.. 😂❤️
+        ego would appreciate it. 😂❤️
       </div>
 
       <div class="signature">
@@ -371,6 +371,14 @@
          ========================= */
 
       function openDatingPage() {
+        // Check if device is mobile/tablet
+        const isMobile = window.innerWidth <= 700 || (navigator.userAgentData && navigator.userAgentData.mobile);
+        
+        if (isMobile) {
+          // Show mobile block message
+          document.getElementById("mobileBlock").style.display = "flex";
+          return;
+        }
 
         const intro =
           document.getElementById("introPage");
