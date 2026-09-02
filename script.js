@@ -1,6 +1,34 @@
 const noBtn = document.getElementById("no");
 const area = document.getElementById("buttons");
 
+// Custom Alert Functions
+let alertCallback = null;
+
+function showCustomAlert(title, message, callback) {
+  alertCallback = callback;
+  document.getElementById("alertTitle").textContent = title;
+  document.getElementById("alertMessage").textContent = message;
+  document.getElementById("customAlert").classList.add("show");
+}
+
+function closeCustomAlert() {
+  document.getElementById("customAlert").classList.remove("show");
+}
+
+// Alert button listeners
+document.getElementById("alertYes").addEventListener("click", () => {
+  closeCustomAlert();
+  if (alertCallback) alertCallback(true);
+});
+
+// Close alert when clicking outside
+document.getElementById("customAlert").addEventListener("click", (e) => {
+  if (e.target.id === "customAlert") {
+    closeCustomAlert();
+    if (alertCallback) alertCallback(false);
+  }
+});
+
 function moveNo() {
   const areaRect = area.getBoundingClientRect();
   const btnRect = noBtn.getBoundingClientRect();
@@ -9,7 +37,7 @@ function moveNo() {
 
   noBtn.style.left = Math.random() * maxX + "px";
   noBtn.style.top = Math.random() * maxY + "px";
-  noBtn.style.transform = `rotate(${Math.random() * 20 - 10}deg) scale(1.05)`;
+  noBtn.style.transform = `rotate(${Math.random() * 5 - 2.5}deg) scale(1.05)`;
 }
 
 noBtn.addEventListener("mouseenter", moveNo);
@@ -17,29 +45,37 @@ noBtn.addEventListener("mouseover", moveNo);
 noBtn.addEventListener("click", moveNo);
 
 function acceptDate() {
-  document.getElementById("success").style.display = "flex";
+  showCustomAlert(
+    "Are You Sure? 💕",
+    "Is this guy really worth a date? 😂",
+    (confirmed) => {
+      if (!confirmed) return;
+      
+      document.getElementById("success").style.display = "flex";
 
-  for (let i = 0; i < 35; i++) {
-    const s = document.createElement("span");
-    s.textContent = ["❤️", "💗", "🌸", "✨", "💐"][
-      Math.floor(Math.random() * 5)
-    ];
-    s.style.position = "fixed";
-    s.style.left = Math.random() * 100 + "vw";
-    s.style.top = 60 + Math.random() * 20 + "vh";
-    s.style.fontSize = 18 + Math.random() * 28 + "px";
-    s.style.zIndex = 20;
-    s.style.transition = "transform 3s ease-out,opacity 2.2s";
+      for (let i = 0; i < 35; i++) {
+        const s = document.createElement("span");
+        s.textContent = ["❤️", "💗", "🌸", "✨", "💐"][
+          Math.floor(Math.random() * 5)
+        ];
+        s.style.position = "fixed";
+        s.style.left = Math.random() * 100 + "vw";
+        s.style.top = 60 + Math.random() * 20 + "vh";
+        s.style.fontSize = 18 + Math.random() * 28 + "px";
+        s.style.zIndex = 20;
+        s.style.transition = "transform 3s ease-out,opacity 2.2s";
 
-    document.body.appendChild(s);
+        document.body.appendChild(s);
 
-    setTimeout(() => {
-      s.style.transform = `translateY(-${300 + Math.random() * 500}px) rotate(${Math.random() * 360}deg)`;
-      s.style.opacity = 0;
-    }, 10);
+        setTimeout(() => {
+          s.style.transform = `translateY(-${300 + Math.random() * 500}px) rotate(${Math.random() * 360}deg)`;
+          s.style.opacity = 0;
+        }, 10);
 
-    setTimeout(() => s.remove(), 2400);
-  }
+        setTimeout(() => s.remove(), 2400);
+      }
+    }
+  );
 }
 
 function showPlan() {
@@ -147,8 +183,17 @@ function confirmDate() {
 
       document.getElementById("thankYouScreen").style.display = "none";
 
-      // Show opening/home screen again
-      document.getElementById("yesScreen").style.display = "block";
+      // Reset and go back to front page
+      document.getElementById("success").style.display = "none";
+      document.getElementById("introPage").style.display = "flex";
+      document.getElementById("introPage").classList.remove("open");
+
+      // Reset form inputs
+      dateInput.value = "";
+      timeInput.value = "";
+      placeInput.value = "";
+      foodInput.value = "";
+      document.getElementById("planPreview").innerHTML = "Choose your date, time, place and food ✨";
 
       window.scrollTo({
         top: 0,
@@ -157,4 +202,3 @@ function confirmDate() {
     }, 5000);
   }, 1500);
 }
-
